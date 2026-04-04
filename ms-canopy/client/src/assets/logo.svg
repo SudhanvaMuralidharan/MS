@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 80">
+  <defs>
+    <!-- Clip path for the semi-circle canopy -->
+    <clipPath id="canopy-clip">
+      <path d="M 0 70 A 70 70 0 0 1 140 70 Z" />
+    </clipPath>
+  </defs>
+
+  <!-- Stripes -->
+  <g clip-path="url(#canopy-clip)">
+    <!-- 7 Stripes, each width 20 -->
+    <rect x="0"   y="0" width="20" height="70" fill="#1b63a2" />
+    <rect x="20"  y="0" width="20" height="70" fill="#46abc5" />
+    <rect x="40"  y="0" width="20" height="70" fill="#1b63a2" />
+    <rect x="60"  y="0" width="20" height="70" fill="#46abc5" />
+    <rect x="80"  y="0" width="20" height="70" fill="#1b63a2" />
+    <rect x="100" y="0" width="20" height="70" fill="#46abc5" />
+    <rect x="120" y="0" width="20" height="70" fill="#1b63a2" />
+  </g>
+
+  <!-- Scallops (circles at the bottom of each stripe) -->
+  <g>
+    <!-- Dark blue scallops -->
+    <circle cx="10"  cy="70" r="10" fill="#1b63a2" />
+    <circle cx="50"  cy="70" r="10" fill="#1b63a2" />
+    <circle cx="90"  cy="70" r="10" fill="#1b63a2" />
+    <circle cx="130" cy="70" r="10" fill="#1b63a2" />
+    
+    <!-- Light blue scallops -->
+    <circle cx="30"  cy="70" r="10" fill="#46abc5" />
+    <circle cx="70"  cy="70" r="10" fill="#46abc5" />
+    <circle cx="110" cy="70" r="10" fill="#46abc5" />
+  </g>
+</svg>
