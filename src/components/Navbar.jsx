@@ -28,7 +28,7 @@ export default function Navbar() {
       <header className={`navbar${scrolled ? ' navbar--scrolled' : ''}`}>
         <div className="navbar__inner">
           <Link to="/" className="navbar__brand">
-            <img src={'/dashruum.png'} alt="DaShruum logo" className="navbar__logo" />
+            <img src={`${import.meta.env.BASE_URL}dashruum.png`} alt="DaShruum logo" className="navbar__logo" />
             <span className="navbar__name">DaShruum</span>
           </Link>
 
