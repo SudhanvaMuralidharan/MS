@@ -1,6 +1,6 @@
 # 🍄 MS Canopy — Premium Exotic Mushrooms Website
 
-A full-stack business website for **MS Canopy**, built with **React + Vite** (frontend) and **Node.js + Express** (backend). Ready to deploy on **Vercel** (frontend) or any Node host (full-stack).
+A professional business website for **MS Canopy**, built with **React + Vite**.
 
 ---
 
@@ -24,7 +24,7 @@ ms-canopy/
 │   │   │   ├── Home.css
 │   │   │   ├── Products.jsx    # 6-product expandable grid
 │   │   │   ├── Products.css
-│   │   │   ├── Contact.jsx     # Contact form + info
+│   │   │   ├── Contact.jsx     # Contact info & map
 │   │   │   └── Contact.css
 │   │   ├── App.jsx             # Router setup
 │   │   ├── main.jsx            # React entry point
@@ -33,14 +33,7 @@ ms-canopy/
 │   ├── vite.config.js
 │   └── package.json
 │
-├── server/                     # Node.js + Express API
-│   ├── routes/
-│   │   └── contact.js          # POST /api/contact handler
-│   ├── index.js                # Express server entry
-│   ├── .env.example            # Environment variable template
-│   └── package.json
-│
-├── package.json                # Root scripts (runs both client + server)
+├── package.json                # Root scripts
 ├── vercel.json                 # Vercel deployment config
 ├── .gitignore
 └── README.md
@@ -56,22 +49,7 @@ ms-canopy/
 npm run install:all
 ```
 
-Or manually:
-```bash
-npm install
-cd client && npm install
-cd ../server && npm install
-```
-
-### 2. Configure server environment
-
-```bash
-cd server
-cp .env.example .env
-# Edit .env with your SMTP credentials (optional — see below)
-```
-
-### 3. Run both client and server
+### 2. Run the application
 
 ```bash
 # From project root:
@@ -79,31 +57,10 @@ npm run dev
 ```
 
 - Frontend → http://localhost:3000  
-- Backend  → http://localhost:5000
 
 ---
 
-## 📧 Contact Form & Email Setup
-
-The contact form posts to `POST /api/contact`.
-
-**Without SMTP configured:** enquiries are printed to the server console.  
-**With SMTP configured:** an HTML email is sent to your inbox.
-
-To enable email, edit `server/.env`:
-
-```env
-SMTP_SERVICE=gmail
-SMTP_USER=your-gmail@gmail.com
-SMTP_PASS=your-app-password       # Google "App Password" — not your login password
-RECIPIENT_EMAIL=info@mscanopy.in  # Where to receive enquiries
-```
-
-> **Gmail users:** Go to Google Account → Security → App Passwords → generate one for "Mail".
-
----
-
-## ☁️ Deploying to Vercel (Frontend Only)
+## ☁️ Deploying to Vercel
 
 1. Push the repo to GitHub.
 2. Go to [vercel.com](https://vercel.com) → **New Project** → import your repo.
@@ -111,8 +68,6 @@ RECIPIENT_EMAIL=info@mscanopy.in  # Where to receive enquiries
 4. Set **Build Command**: `cd client && npm install && npm run build`
 5. Set **Output Directory**: `client/dist`
 6. Click **Deploy** ✅
-
-> **Note:** For full-stack deployment (with the contact form API), deploy the `server/` folder separately to **Railway**, **Render**, or **Fly.io**, then update `vite.config.js` proxy target and set the `CLIENT_URL` env var.
 
 ---
 
